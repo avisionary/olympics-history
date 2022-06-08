@@ -1,0 +1,357 @@
+<html><head></head><body><h1>Visual Analysis of 124 years of Olympics</h1>
+<p>By: <br>Avi Arora<br>Sonali Pednekar<br>Tahera Ahmed</p>
+<h1>Introduction</h1>
+<p>The modern olympic games or more commonly known as The Olympics are the leading international sporting event featuring thousands of athletes from around the world competing in a variety of competitions. With almost every nation competing for glory in numerous competitions, the Olympics can be expressed as a representation of how the society is functioning across the world and in different phases of time. With its rich history, we can delineate the changes in socio-economic and demographic factors across the 5 major continents. We will also explore the documentation on winners of the olympic games, to predict the future outcomes of the games. To address this, we propose to build data visualizations which may help sports managers in building their olympic teams. These visualizations will show the distribution of factors contributing to a person winning a medal and thus will allow managers to filter by the game and have an in-depth understanding of the past games. We also propose building some data visualizations which might help a nation’s sports administration to understand the impact of hosting on winning and also on the nation’s economic performance afterwards. This could be really helpful for the nations that are thinking about hosting the olympic games further down the road.</p>
+<h1>Data</h1>
+<p>We will be visualizing approximately 120 years of olympic history and will need to implement processing pipelines to get there. We will be using R and python scripts in order to reach our desired analytical dataset and build data visualizations. Every row in our dataset (<a href="https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results">data link</a>) has 15 associated variables that describe the athlete (Name, ID) that participated in the Olympics in some competition (event, sport) and the result (Medal). We won’t be needing athlete names as they would be unique and thus we will perform a “group by” processing on our dataset based on our different unit of analysis (Sex, Age, Height, Weight, Country). Since our initial dataset only contains data uptil the year 2016, we will be merging the dataset to a new dataset that has 2020 olympic data (<a href="https://www.kaggle.com/datasets/phoebec216/summer-olympics-medal-tables-1896-2012">data link</a>).</p>
+<h1>Participation across history (Figure.1)</h1>
+<p>Inspiration for the graph is linked <a href="https://altair-viz.github.io/gallery/choropleth.html">here</a> and <a href="https://altair-viz.github.io/gallery/interactive_brush.html">here</a></p>
+<h2>Datasets used</h2>
+<p>World olympics data was used for most of the analysis in our graph which
+can be found
+<a href="https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results">here
+</a> Apart from that, vega.datasets altair in Python has been used to pull up world
+data which has country codes, names and their respective polygon
+elements. Both of these data sets were merged for plotting a world map.</p>
+<h3>Data Processing</h3>
+<p>– Country names in both data sets were not matching, resulting in a plot
+where some of the countries were not showing up. For this a data
+pipeline had to be set that fetched in the data from one of the data
+sets and matched them according to the other. ISO and NOC code matching
+was done to achieve this from an external data set that matched these
+codes.</p>
+<p>– After matching countries, duplicate participants had to be removed.
+This was an important step as the data set was every point of event in
+Olympics History and thus had a lot of duplicate athlete rows in the
+same year.</p>
+<h2>Visualization</h2>
+<h3>Design Decisions</h3>
+<h4>Visual Encoding:</h4>
+<p>Two Visual graphs were linked together in this graph:
+1- A chloropeth for the world was chosen to represent the total participation for each country. The countries were colored according to the count of participants.
+2- A bar graph was plotted for each country, and then a year wise participation is viewed. The colors used in this plot represent the different countries in each year
+The linkage provided is in form of a click, the selection is made on country name as the id. If you click on either of the graphs, information such as total participation, participation by year can revealed.</p>
+<h4>Color Scale :</h4>
+<p>Color scale was chosen as redyelloworange as it shows the sequential decrease and increase in different countries.It can be also used for a lot of categories such as all the countries in the dataset (180).</p>
+<h4>Tooltip :</h4>
+<p>Hover was included using on every country to help the people that know
+geography that well. This was achieved by making a custom tooltip in
+altair interactive graphs. The tooltips provided the total participation over the world map for different countries. The tooltips on bar plots show the participating country and participation for individual years.</p>
+<h2>For the future</h2>
+<p>We will try to annotate these plots and all the facts that were revealed.</p>
+<h1>Medal count distribution of top 10 countries (Figure.2)</h1>
+<h2>Idea:</h2>
+<p>In this spirit of Olympics, participation shows how the world comes
+together to enjoy sportsmanship. One of the more exciting aspects is the
+end result. A visual attempt to see how countries perform during the
+Olympics is made to summarize this enthralling experience. Inspiration for the graph is linked <a href="https://medium.com/analytics-vidhya/how-to-do-a-sankey-plot-in-python-5298869f5e8e">here</a></p>
+<h2>Analysis:</h2>
+<p>The top 10 countries that have showcased exceptional victories are the
+United States, China, Germany, United Kingdom, Italy, Russia, Sweden,
+France, Japan, and Australia. The United States has ranked the topmost
+with a landslide with approximately 3000 medals in its name. Following
+the United States is the United Kingdom, Germany and France with 948,
+892 and 874 medals in total. Other countries have medals ranging from
+700-555. The United States also has shown to have the most Gold, Silver
+and Bronze medals. Japan and Australia are the lower spectrum of this
+analysis and it shows that while Japan has a lesser number of medals
+overall , it has more number of Gold medals than Australia. Australia on
+the other hand has more bronze medals.</p>
+<h2>Data Source :</h2>
+<p>1- World Population Review Website (New Dataset Added) Data Link:
+<a href="https://worldpopulationreview.com/country-rankings/olympic-medals-by-country">here</a> <br></p>
+<p>2- 120 Years of Olympics History Dataset (Pre-approved Dataset) Data
+Link:
+<a href="https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results">here</a></p>
+<h2>Technical Approach:</h2>
+<p>The first dataset contains the information of all the medals won by a
+country including each category (Gold, SIlver, Bronze). Population of
+the country was filtered out from the dataset as it was irrelevant. A
+small dataset that contains the information of which country belongs to
+which continent was used to add continents to the dataset. The dataset
+was melted into a tidy format ready for visualization. A new column was
+added to this dataset called colors, this included colors of each
+continent in the Olympic rings. A requirement of our plot i.e.&nbsp;the
+Sankey plot is to code a relationship between our nodes. Therefore,
+links and nodes are also generated in the munging process. An approach
+to do that was to use indices to generate numeric labels for our country
+labels. The medal label encoder were also generated using numpy
+functionalities.</p>
+<h2>Visual Approach:</h2>
+<p>The choice of visualization was a Sankey plot. The choice made is clear
+as the question intends to show a relationship between countries and
+their performance in terms of medals. The Sankey plot includes a
+component value that acts as the weight of the relationship between two
+nodes/components. This allows us to visually interpret how many medals a
+country has won. The flow also can tell us how the medals are
+distributed across these countries. This shows a two way relationship
+and allows us to have more insights from a single structure. The colors
+are again used to signify Olympic rings. The medals are given colors
+that are general to how they look. The connections are kept purposely in
+the colors of the medals to show two things, one a collective number of
+total medals won by a country on the node of the country labels and two,
+to show how medals are distributed across the countries.The nodes of
+the country labels are colored in their continent’s respective color to
+give some more information about the country.</p>
+<h2>For the future:</h2>
+<p>We intend to incorporate continent relation with countries and so on with medals.</p>
+<h1>Hosting</h1>
+<h2>Competitive Edge with Hosting (Figure.3)</h2>
+<p>Inspiration for the graph is linked <a href="https://www.kaggle.com/code/joshuaswords/does-hosting-the-olympics-improve-performance">here</a></p>
+<h3>Datasets used</h3>
+<p>World olympics data was used for most of thr analysis in our graph which
+can be found
+<a href="https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results">here</a></p>
+<h3>Data Processing</h3>
+<p>– Tidyverse was used to wrangle the data as per the the plot
+requirement. A group by was performed on country year and medal to get
+the count of number of medals per country for every year. – Using the
+host city columnn a function was created that gave us Host country for
+every year. – The number of medals and years of a country were then
+matched to see if the number of medals won were of host country or not.
+– After matching countries, duplicate athletes had to be removed. This
+was an important step as the data set was every point of event in
+Olympics History and thus had a lot of duplicate athlete rows in the
+same year.</p>
+<h3>Design Decisions</h3>
+<h4>Visual Encoding:</h4>
+<p>Color was chosen as an encoder to split the Hosting nation from the non
+hosting nations. Apart from that titles and subtitles were created in a
+way to create visual impact and draw attention of the audience.</p>
+<h4>Legend Scale :</h4>
+<p>Legend was specifically kept hidden as the color of graph was matched to
+what it is representing in the subtitle. This seems a more seemless and
+design effective visual. This also creates more space for the chart.</p>
+<h4>Annotations :</h4>
+<p>[To be done] Annotations that mark record of most medals won in a year
+in the 3rd Olympics itself to be provided</p>
+<h2>Financial Aspect of hosting (Figure.4)</h2>
+<p>Inspiration for the graph is linked <a href="https://plotly.com/python/images/">here</a></p>
+<h3>Data Source :</h3>
+<p>1- World Development Indicators Official Website (New Dataset Added)
+Data Link:
+<a href="https://databank.worldbank.org/reports.aspx?source=world-development-indicators">here</a></p>
+<p>2- 120 Years of Olympics History Dataset (Pre-approved Dataset) Data
+Link:
+<a href="https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results">here</a></p>
+<h3>Technical Approach:</h3>
+<p>The data munging process required filtering out the data that was
+relevant for the analysis. The Filter data contained information on
+Summer Olympics alone. The years chosen were from 1995-2020. This was
+because the Tourism Indicator data was missing for years prior to 1995.
+Once this data was filtered, the number of arrivals were recorded in
+Millions. The second dataset that included the information of the host
+cities was utilized to generate host Countries. These datasets were now
+joined together to make visuals for our analysis. There was another
+column that was generated that indicated if a particular country for any
+given year was a host or not. This column will be used to indicate hosts
+on our visualization</p>
+<h3>Visual Approach:</h3>
+<p>The choice of visualization was a simple line plot. Line plots are very
+efficient in showing a decrease or increase in values across years. The
+visual encodings included in this plot revolve around the overall theme
+of the olympics. The colors chosen are employed to make an attempt of
+showing the essence of Olympics where continents come together to
+celebrate sports. Hence, the visual encoding contains only the colors
+from the Olympic Rings and while each country is represented, the colors
+belong to their continent. Other encoding employed in this graph was to
+mark all the hosts across the year using a torch image. This is done to
+specifically target to look at tourist indicators before and after the
+country hosted the Olympics. In the end the logo is added to bring
+unification in the story.</p>
+<h3>For the future:</h3>
+<p>As this plot may not show us the financial implications yet, other
+tourism indicators will be explored to see if there is a revenue
+generation from other sources of tourism. For eg. international
+shopping, export increase etc.</p>
+<h1>Gender Parity in Olympics History (Figure.5)</h1>
+<p>Inspiration for the graph is linked <a href="https://r-graph-gallery.com/287-smooth-animation-with-tweenr.html">here</a> and <a href="https://yulab-smu.top/pkgdocs/ggimage.html">here</a></p>
+<h2>Datasets used</h2>
+<p>World olympics data was used for most of the analysis in our graph which
+can be found
+<a href="https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results">here</a></p>
+<h2>Idea</h2>
+<p>The idea was to depict the gap between the gender participation
+throughout the years and the total participation</p>
+<h2>Technical Approach</h2>
+<p>The original 120 years of Olympic data is filtered as our analysis
+revolves around only the Summer games in Olympics. Our data set only
+contains the data through the years 1896 - 2016, an additional dataset
+is attached for the the values of the year 2020. The total number of
+participants in each year for each gender is calculated so that we can
+plot the line graph showing the participation by gender and the barplot
+showing the total participation. Pivot wider is used to split the sex
+column into two separate columns as we need to find the difference
+between the participation. The na values are replaced with 0 and the
+difference is calculated. Pivot longer is used to bring back the dataset
+to its original dimensions. A new column is added to the table named
+icon, this column is used to create the male-female icon instead of
+point. <br></p>
+<h2>Visual Encodings</h2>
+<p>The next step is to generate the graph. We have created a gif which as
+it animates the change throughout the years. For the graph on the upper
+section of the gif, line plot is used as it is a better representation
+to look at the change throught time. Stacked Bar plot is used in the
+second graph as it is easier to depict the total participation and the
+split in the color makes it easier to decipher. Common x-axis and title
+is used for the graph as it represents the same information. Both the
+graphs are color coded and instead of a legend, the subtitle has the
+color of the gender. Gender Icon is used instead of a simple point as it
+is visually more appealing for the icon to rise and fall. Each year is
+shown in the x-axis vertically so that it is easier to make out the
+change in the years.</p>
+<h1>Gender Parity in 2020 Olympics (Figure.6)</h1>
+<h2>Idea :</h2>
+<p>Deep dive into the Tokyo 2020 Olympics as it has the least gender parity
+among the other years.
+Inspiration for the graph is linked <a href="https://www.connorrothschild.com/post/dumbbell-plots/">here</a></p>
+<h2>Data :</h2>
+<p>The data in our original dataset is only uptil 2016 and hence for this analysis we used another dataset which has the information of the 2020 Olympics.
+<a href="https://www.kaggle.com/datasets/arjunprasadsarkhel/2021-olympics-in-tokyo">here</a></p>
+<h2>Technical Approach :</h2>
+<p>A new dataset containing the participation in Tokyo 2020 Olympics is
+used. Some of the sports are merged into one to have a less cluttered
+graph. (Eg. All the sports under Clycling, Baseketball, Swimming,etc).
+The difference between the male and female participation is calculated.
+Some of the sports are excluded from the graphs as their participation
+is low. Athletics is excluded from the graph as the number of
+participants are high ( 900-1000) and it will compress the other graphs.
+<br></p>
+<h2>Visual Encodings :</h2>
+<p>The next step is to generate the graph. We have created a dumbbell plot
+as it effectively shows the difference between the participants for each
+sport. The graph is color coded and instead of a legend, the subtitle
+has the color of the gender. The point is annotated with the value of
+the number of participants. The ticks and x-axis is removed as the exact
+value is annotated on the graph. A separate difference rectangle is
+created which shows the exact value of the difference. The difference is
+color coded by the dominance of the gender. Red color in the difference
+column shows that there is no gap between the participation.</p>
+<h2>Future Aspects :</h2>
+<p>There is a huge volume of participants and there are a lot of events
+under Athletics . Hence we can deep dive into Athletics in the future.</p>
+<h1>Age &amp; BMI analysis (Figure.7)</h1>
+<h2>Datasets used</h2>
+<p>World olympics data was used for most of the analysis in our graph which
+can be found
+<a href="https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results">here
+</a>. Apart from that world data set for average BMI for every country
+across age and gender will be used in the future to compare the average
+of each country to every data point.</p>
+<h3>Data Processing</h3>
+<p>– Tidyverse was used to wrangle the data as per the the plot
+requirement. First BMI was calculated based on the formula of BMI =
+kg/m^2 <br>
+– Group by was done to get the average age and BMI for every
+sport. <br>
+– After matching countries, duplicate athletes had to be removed.
+This was an important step as the data set was every point of event in
+Olympics History and thus had a lot of duplicate athlete rows in the
+same year.</p>
+<h2>Visualization</h2>
+<h3>Design Decisions</h3>
+<h4>Visual Encoding:</h4>
+<p>Every data point in the scatter plot was split by the sport to see which
+point associates to which sport. This will help us in analyzing which
+sports have more youth and which have more experienced athletes.</p>
+<h4>Legend Scale :</h4>
+<p>Legend scale was provided which is scrollable and filterable. We can
+double click on a data point to just see that sport and compare male and
+female average age and BMI for that particular sport only.</p>
+<h4>Annotations <a href="#for-the-future-3">For the future</a></h4>
+<p>Annotations that mark record the least and highest age and BMI will be
+provided to give context inside the plot.</p>
+<h1>Performance of athletes (Figure.8)</h1>
+<p>Inspiration for the graph is linked <a href="https://www.srf.ch/static/srf-data/data/2018/federer/#/de">here</a></p>
+<h2>Data Source :</h2>
+<p>120 Years of Olympics History Dataset (Pre-approved Dataset) Data Link:
+<a href="https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results">here</a></p>
+<h2>Technical Approach</h2>
+<p>The dataset required minimal munging and more aggregation techniques.
+The dataset contained information about the type of medal an athlete has
+won, or none at all. In order to find the total medals won by an
+athlete, a binary feature was generated that signified with a yes or no
+that an athlete has a medal. Once this was done, the total medals won by
+a single athlete was derived by grouping the dataset on the name of the
+athlete and taking the sum of all the Yes’s present in medal present or
+not column feature. Another feature was generated from the same dataset
+that counted the number of games the athlete has participated in. This
+was done by grouping by again the name of the athlete and this time
+taking the sum of all the rows for each athlete. Both these grouped data
+series were converted into dataframe and merged to make the data ready
+for analysis. The dataset was then sorted by the number of medals. As
+there were approx 14000 participants, it was imperative to cut down the
+number of athletes from the visualization. A decision was to keep only
+those athletes that had participated in at least 15 games. This was done
+because there were certain athletes that had only participated in one
+game and won that game, this would show a 100% rate of win which can be
+a little misleading if one’s not paying attention.</p>
+<h2>Visual Approach</h2>
+<p>The choice of visualization in this case is a bubble plot. This was done
+so that a large number of data points can be incorporated. Bubble plot
+allows a variation in size that helps in visual encoding of the athletes
+total number of medals and well their percent win. Furthermore while the
+graph shows participation by country, the color encoding still belongs
+to the continent. Furthermore, the legend was removed because the hover
+gives enough information of the team and country the athlete belongs to.
+This was additionally done because of text annotations employed in this
+graph. The additional encodings that spice up the graph are images of
+the leading athletes. The text annotations provide facts of these
+exceptional athletes. In the end the logo is added to bring unification
+in the story.</p>
+<h2>For the future</h2>
+<p>To build an interaction with this plot, a bar graph that shows the
+number of different medals each athlete has on triggering their dots.</p>
+<h1>Micheal Phelps as a country (Figure.9)</h1>
+<p>Fig.9 is an innovative view in our analysis. Different visual components are incorporated in Fig.9 to add a new twist to the graph. Inspiration for the graph is linked <a href="https://yulab-smu.top/pkgdocs/ggimage.html">here</a></p>
+<h2>Data Source :</h2>
+<p>120 Years of Olympics History Dataset (Pre-approved Dataset) Data Link:
+<a href="https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results">here</a></p>
+<h2>Technical Approach</h2>
+<p>The dataset contained information about the type of medal an athlete has
+won, or none at all. First we have to find the list of all the top 15 countries
+that have the highest number of total gold medals through the timeframe that
+Micheal Phelps started participating. In order to find the total medals won
+by Micheal Phelps, a filter was done on the dataset, which was then grouped by and
+a count was taken.A similar approach was followed for the country data
+set and the medals were calculated for all the countries for the period
+of 2004 - 2016. Then, both of these data sets were merged together using
+rbind functionality in R. Duplicate rows were deleted to not have the
+counts shoot up. This was done because there were certain athletes that
+had participated in multiple games.</p>
+<h2>Visual Approach</h2>
+<p>The choice of visualization in this case is an emoji plot. This was done
+so that all the swimming emojis could represented as if the players of that
+country are swimming.The color of the panel in Fig.9 has been made blue as
+significance to the blue color for swimming pools. The animation in
+the emoji vividly represents as if the players of the countries are competing in
+a swimming competition against each other. The dark blue colored line represents
+the separating lane line in a swimming pool. The second last lane line in Fig.9
+represents Micheal Phelps' rank amongst the other countries which can be seen
+clearly through the annotation added using geom text.</p>
+<h1>Is Olympics Ranking Flawed? (Figure.10)</h1>
+<h2>Idea :</h2>
+<p>Find if there is any flaw in the ranking system of the Olympics.</p>
+<h2>Data :</h2>
+<p>The original dataset does not contain the rank of each participating countries each year. For this plot, to show the if the ranking system is flawed or not in Olympics, rank is an important aspect.  This new dataset (<a href="https://www.kaggle.com/datasets/phoebec216/summer-olympics-medal-tables-1896-2012">here </a> )contains the rank and number of different medals of each participating country from the beginning of Olympics upto 2012.</p>
+<h2>Technical Approach :</h2>
+<p>A new dataset containing the rank, total medals and the distributions of
+the medals through 1896-2012 is used.Only four years (2000 - 2012) is
+filtered from the whole dataset. Weighted rank is calculated by
+assigning weights to the medals (gold :3, silver :2, bronze: 1) and
+multiplying the weight to the number of medals for a country. Only the
+top 10 ranks are retained in the dataset <br>
+Equation:
+<br>
+<centre> New Rank = 3 * Gold Medals + 2 * Silver Medals + 1 * Bronze Medals </centre></p>
+<h2>Visual Encodings :</h2>
+<p>The next step is to generate the graph. We have created a scatter plot
+as it effectively shows if there is any difference between the ranks.
+The graph is color coded and instead of a legend, the subtitle has the
+color of the original rank and weighted rank. The plot is faceted
+according to the years. The original rank has a smaller point size than
+the weighted rank.</p>
+<h2>Future Aspects :</h2>
+<p>Join the points to make a segment and represent the gap. Annotate the
+points showing the countries with the maximum flaws in the ranking.</p>
+</body></html>

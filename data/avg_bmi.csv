@@ -1,0 +1,191 @@
+﻿Country,Both,Male,Female
+ Nauru *,32.5,32.1,32.8
+ Tonga *,31.9,30.4,33.5
+ Samoa *,31.7,29.9,33.5
+ Kuwait *,30,29.5,30.8
+ Saint Kitts and Nevis *,29.7,28.4,30.9
+ Saint Lucia *,29.6,28.9,30.2
+ Kiribati *,29.6,28.7,30.5
+ Palau,29.4,29.4,29.5
+ Micronesia *,29.4,27.8,31
+ Tuvalu *,29.3,28.7,29.9
+ Qatar *,29.2,29,30.1
+ Marshall Islands *,29.2,28.4,30
+ Egypt *,29.2,27.6,30.7
+ United Arab Emirates *,29,28.6,29.7
+ Jordan *,28.9,28.2,29.7
+ Belize *,28.9,27.6,30.2
+ Bahamas,28.8,28,29.6
+ Trinidad and Tobago *,28.7,27.9,29.4
+ Barbados *,28.7,27.4,30
+United States,28.5,28.5,28.5
+ Saudi Arabia *,28.5,28.3,28.7
+ Libya *,28.4,27.2,29.6
+ Bahrain *,28.2,28,28.6
+ Mexico *,28.1,27.5,28.7
+ Antigua and Barbuda,28.1,27.3,29.5
+ Syria *,28.1,27.2,29
+ Iraq *,28,27.2,28.8
+ New Zealand *,27.9,28,27.8
+ Lebanon *,27.8,28,27.6
+ Chile *,27.8,27.6,28
+ Turkey *,27.8,27.1,28.5
+ Argentina *,27.7,27.8,27.5
+ Ireland *,27.5,27.9,27.1
+ Andorra *,27.5,27.8,27.1
+ Kazakhstan *,27.4,27.4,27.5
+ El Salvador *,27.4,26.8,28
+ Azerbaijan *,27.4,26.6,28.1
+ Suriname *,27.4,26.5,28.2
+ Jamaica *,27.4,25.5,29.2
+ United Kingdom *,27.3,27.5,27.1
+ Greece *,27.3,27.4,27.2
+ Saint Vincent and the Grenadines *,27.3,26.5,28.1
+ South Africa *,27.3,25.4,29.1
+ Australia *,27.2,27.6,26.8
+ Canada *,27.2,27.6,26.8
+ Malta *,27.2,27.5,26.8
+ Venezuela *,27.2,27.4,27.1
+ Georgia *,27.2,27.2,27.3
+ Fiji *,27.2,26.1,28.4
+ Panama *,27.1,26.4,27.7
+ Cyprus *,27,27.6,26.3
+ Ecuador *,27,26.4,27.7
+ Grenada *,27,25.2,28.7
+ Dominica *,27,25.1,29
+ Czech Republic *,26.9,27.8,26
+ Slovenia *,26.9,27.5,26.3
+ Oman *,26.9,26.8,27.1
+ Costa Rica *,26.9,26.7,27.1
+ Nicaragua *,26.9,26,27.8
+ Uruguay *,26.8,26.7,26.9
+ Tunisia *,26.8,26,27.5
+ Seychelles *,26.8,25.6,28
+ Spain *,26.7,27.4,26
+ Moldova *,26.7,26.3,27.1
+ Dominican Republic *,26.7,26,27.4
+ Armenia *,26.7,25.9,27.4
+ Lithuania *,26.6,27.3,26
+ Belarus *,26.6,27.1,26.2
+ Swaziland *,26.5,24.1,28.9
+ Luxembourg *,26.5,27.6,25.5
+ Slovakia *,26.5,27.4,25.7
+ Russia *,26.5,26.1,26.8
+ Guatemala *,26.5,25.8,27.1
+ Poland *,26.4,27,25.7
+ Turkmenistan *,26.4,26.4,26.4
+ Honduras *,26.4,25.5,27.3
+ Guyana *,26.3,25,27.6
+ Hungary *,26.3,27.5,25.2
+ Germany *,26.3,27,25.6
+ Israel *,26.3,26.3,26.2
+ Peru *,26.3,25.7,26.9
+ Iran *,26.2,25.3,27.2
+ Portugal *,26.2,26.7,25.7
+ Brunei *,26.2,25.8,26.6
+ Cuba *,26.2,25.6,26.7
+ Kyrgyzstan *,26.2,25.6,26.8
+ Vanuatu *,26.2,25.6,26.8
+ Algeria *,26.2,25.5,27
+ Albania *,26.1,26.6,25.6
+ Bosnia and Herzegovina *,26.1,26.5,25.7
+ Uzbekistan *,26.1,25.9,26.3
+ Mongolia *,26,25.5,26.4
+ Norway *,26,26.9,25.2
+ Italy *,26,26.8,25.2
+ Bulgaria *,26,26.7,25.3
+ Montenegro *,26,26.5,25.5
+ Ukraine *,26,26.4,25.8
+ Bolivia *,25.9,24.6,27.3
+ Colombia *,25.9,25.4,26.5
+ Brazil *,25.9,25.9,26
+ Iceland *,25.9,26.7,25.1
+ Finland *,25.9,26.5,25.3
+ Yemen *,25.8,25.2,26.5
+ Paraguay *,25.8,25.6,26
+ Latvia *,25.8,26.8,25.1
+ Sweden *,25.8,26.7,24.9
+ Serbia *,25.8,26.4,25.2
+ North Macedonia *,25.8,26.4,25.3
+ Mauritius *,25.6,25,26.2
+ Equatorial Guinea *,25.6,25,26.1
+ Morocco *,25.6,25.2,25.9
+ Gabon *,25.5,24.6,26.4
+ Solomon Islands *,25.5,24.5,26.4
+ Belgium *,25.5,26.2,24.7
+ Estonia *,25.5,27,24.3
+ Croatia *,25.5,26.5,24.6
+ Tajikistan *,25.4,25.5,25.3
+ Netherlands *,25.4,25.9,25
+ Austria *,25.4,26.5,24.4
+ Papua New Guinea *,25.3,25,25.6
+ Malaysia *,25.3,25,25.6
+ Romania *,25.3,25.7,24.9
+ Denmark *,25.3,26,24.5
+ France *,25.3,26.1,24.6
+ Switzerland *,25.3,26.7,23.8
+ South Sudan *,25.2,23.7,26.7
+ Sudan *,25.2,23.7,26.7
+ Maldives *,25.1,24.2,25.9
+ Lesotho *,24.9,22.7,27.1
+ Mauritania *,24.8,23.2,26.4
+ São Tomé and Príncipe *,24.8,23.9,25.6
+ Botswana *,24.7,22.9,26.6
+ Cape Verde *,24.7,23.9,25.4
+ Cameroon *,24.4,23.8,25.1
+ Namibia *,24.3,22.9,25.6
+ Ghana *,24.2,23.4,25.1
+ Comoros *,24.1,23,25.1
+ Thailand *,24.1,23.6,24.6
+ Angola *,24.1,23.5,24.6
+ Haiti *,24.1,24.2,24
+ Gambia,24,23,25.1
+ Liberia *,24,23.2,24.9
+ China *,23.9,24.2,23.6
+ South Korea *,23.9,24.3,23.4
+ Pakistan *,23.8,23.3,24.4
+ Bhutan *,23.8,23.4,24.2
+ Singapore *,23.7,24.3,23.2
+ Ivory Coast *,23.6,23.2,24.1
+ Zimbabwe *,23.4,21.8,25
+ Benin *,23.4,22.6,24.3
+ Nigeria *,23.4,22.8,24
+ Congo *,23.3,22.5,24.1
+ Djibouti *,23.3,22.7,23.9
+ Togo *,23.2,22.4,24
+ Philippines *,23.2,22.9,23.4
+ Guinea-Bissau *,23.1,22.2,23.9
+ Tanzania *,23.1,22.2,24
+ Senegal *,23,21.8,24.1
+ Kenya *,23,21.9,24
+ Sri Lanka *,23,22.5,23.5
+ Indonesia *,22.9,22.4,23.4
+ Sierra Leone *,22.8,22,23.6
+ Malawi *,22.8,22.3,23.3
+ Mali *,22.8,22.6,23
+ Guinea *,22.7,22.1,23.3
+ Zambia *,22.6,21.5,23.8
+ Myanmar *,22.6,22.1,23.2
+ Laos *,22.6,22.4,22.7
+ Japan *,22.6,23.6,21.7
+ Central African Republic *,22.4,21.6,23.2
+ Mozambique *,22.3,21.6,23
+ Chad *,22.3,22.1,22.5
+ DR Congo *,22.2,21.8,22.5
+ Nepal *,22.2,22.4,22
+ Burkina Faso *,22.1,22.1,22
+ Uganda *,22,21,23
+ Rwanda *,22,21.3,22.7
+ Somalia *,21.9,21.2,22.5
+ India *,21.9,21.8,22.1
+ Cambodia *,21.9,21.9,22
+ North Korea *,21.8,21.9,21.8
+ Niger *,21.7,21.3,22.2
+ Vietnam *,21.6,21.5,21.6
+ Afghanistan *,21.6,21.5,21.8
+ East Timor *,21.2,21.5,21
+ Madagascar *,21.1,20.9,21.2
+ Bangladesh *,21,20.7,21.2
+ Burundi *,20.9,20.4,21.3
+ Ethiopia *,20.6,20.2,21
+ Eritrea *,20.5,20.1,21
